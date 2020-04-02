@@ -2,34 +2,16 @@
   position: relative;
   font-size: 16px;
   width: 100%;
-  height: 1.2em;
+  height: 2.2em;
   box-sizing: border-box;
   margin: 0.25em auto;
   color: #230051;
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica,
     sans-serif;
-}
-.wrappers input {
-  /* prevent ios input zoom */
-  font-size: 16px;
-  width: 100%;
-  font-size: 1.1em;
-  top: 0;
-  left: 0;
-  border: 0;
-  /* padding: 0.4em 0em; */
-  /* padding-left: 2em; */
-  position: relative;
-  background: linear-gradient(to bottom, white, #f9fafb);
-  transition-property: border-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
-  border: 2px solid transparent;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03),
+    0 1.8px 2.3px rgba(0, 0, 0, 0.029), 0 3.4px 4.4px rgba(0, 0, 0, 0.024),
+    0 6px 5.8px rgba(0, 0, 0, 0.02);
   border-radius: 6px;
-  z-index: 30;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02),
-    0 1.8px 2.3px rgba(0, 0, 0, 0.015), 0 3.4px 4.4px rgba(0, 0, 0, 0.02),
-    0 6px 5.8px rgba(0, 0, 0, 0.01);
 }
 .wrapper input {
   /* prevent ios input zoom */
@@ -39,26 +21,25 @@
   position: absolute;
   top: 0;
   left: 0;
-  line-height: 1.2em;
-  /* appearance: none; */
-  border-radius: 6px;
+  box-shadow: none;
   opacity: 1;
-  border: 2px solid transparent;
   border: 0;
   z-index: 30;
-  /* line-height: 1.2em; */
-  /* background: #fff; */
-  /* border: 2px solid transparent; */
+  padding: 0.6em;
+  box-sizing: border-box;
+  padding-left: 2.2em;
 }
-/* .wrapper input:focus ~ .backdrop {
+.wrapper input:focus ~ .backdrop {
   box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent;
   background: #5c6ac4;
-  opacity: 0.8;
-} */
+}
+
 .wrapper input:focus {
   outline: none;
-  box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent;
+  /* box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent; */
   border-color: #5c6ac4;
+  /* border-radius: 5px; */
+  /* box-shadow: none; */
   opacity: 1;
 }
 .content {
@@ -79,90 +60,45 @@
   color: #637381;
 }
 .label-icon {
-  width: 1.1em;
-  height: 1.1em;
-  opacity: 0.8;
-  margin-right: 0.5em;
+  width: 0.9rem;
+  height: 0.9rem;
+  opacity: 1;
   max-width: 100%;
   max-height: 100%;
   display: block;
-  line-height: 2rem;
   z-index: 50;
   position: absolute;
-  top: 0.8em;
-  left: 0.7em;
+  top: 0.65em;
+  left: 0.8em;
 }
 .label-icon svg,
 .label-icon path {
-  stroke-width: 0.4px;
+  transition-property: fill, fill-opacity, stroke, stroke-opacity;
+  transition-duration: 100ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
+  stroke-width: 0.5px;
   stroke: #637381;
   stroke-opacity: 0.5;
   fill-opacity: 0.5;
   fill: #637381;
   position: relative;
-  display: block;
+  /* display: block; */
   width: 100%;
   max-width: 100%;
   max-height: 100%;
 }
-
-.search-icon {
-  width: 1rem;
-  height: 1rem;
-  max-width: 100%;
-  max-height: 100%;
-  display: block;
-  line-height: 2rem;
-  margin-right: -0.2em;
-  font-size: 1rem;
-  z-index: 50;
+.wrapper input:focus + .label-icon svg,
+.wrapper input:focus + .label-icon path {
+  fill: #00044c;
+  fill-opacity: 1;
+  stroke: #00004c;
+  stroke-opacity: 1;
 }
-.search-icon svg,
-.search-icon path {
-  fill: #637381;
-  position: relative;
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  max-height: 100%;
-}
-/* .backdrop {
-  background-color: #c4cdd5;
-  opacity: 0.1;
-  border: 2px solid transparent;
-  box-shadow: 0 0 0 0.5px transparent, 0 0.05rem 0 0 rgba(22, 29, 37, 0.05);
-  border-radius: 5px;
-  transition-property: box-shadow, background-color;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
-  position: absolute;
-  z-index: 10;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-}
-.backdrop::after {
-  content: "";
-  opacity: 1;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: block;
-  background: linear-gradient(to bottom, white, #f9fafb);
-  border-radius: 4px;
-} */
 .backdrop {
   position: absolute;
   background-color: #c4cdd5;
-  opacity: 0.5;
-  /* height: 100%; */
-  /* width: 100%; */
-  /* height: 1em; */
-  border: 2px solid transparent;
-  box-shadow: 0 0 0 0.5px transparent, 0 0.05rem 0 0 rgba(22, 29, 37, 0.5);
+  opacity: 1;
+  border: 2.5px solid transparent;
   border-radius: 5px;
   transition-property: box-shadow, background-color;
   transition-duration: 200ms;

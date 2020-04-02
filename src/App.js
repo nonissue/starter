@@ -13,7 +13,9 @@ function App() {
       <div className={styles.search}>
         <Search label="Test" placeholder="Search" />
       </div>
-      <div className={styles.content}>{/* <h2>Lists</h2> */}</div>
+      <div className={styles.content}>
+        <h2>Lists</h2>
+      </div>
     </div>
   );
 }

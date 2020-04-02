@@ -32,6 +32,9 @@ const Search = ({ placeholder, label }) => {
         // onBlur={handleChange}
         // onChange={handleChange}
       ></input>
+      <span className={styles["label-icon"]}>
+        <SearchMajorMonotone viewBox="-1 -1 23 23" />
+      </span>
       {/* <div className={styles.content}>Test</div> */}
       <div className={styles.backdrop}></div>
       {/* <div className={styles.content}></div> */}
