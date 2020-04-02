@@ -40,10 +40,8 @@
 
 .wrapper input:focus {
   outline: none;
-  /* box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent; */
   border-color: #5c6ac4;
   opacity: 1;
-  /* box-shadow: none; */
 }
 .content {
   display: flex;
@@ -78,12 +76,8 @@
   transition-property: all;
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
-  /* stroke-width: 0px; */
-  /* stroke: #637381; */
   stroke: hsl(208, 13%, 65%);
-  /* opacity: 0.6; */
   fill: hsl(208, 13%, 65%);
-  /* position: relative; */
   display: block;
   width: 100%;
   max-width: 100%;
@@ -95,13 +89,11 @@
   stroke: #00044c;
   fill-opacity: 1;
   opacity: 1;
-  /* stroke: #00044c; */
   stroke-opacity: 1;
 }
 .backdrop {
   position: absolute;
   background-color: #c4cdd5;
-  /* background: transparent; */
   opacity: 1;
   border: 2.5px solid transparent;
   border-radius: 5px;
@@ -124,4 +116,19 @@
   display: block;
   background: linear-gradient(to bottom, white, #f9fafb);
   border-radius: 4px;
+}
+
+/* need to fade in */
+.results-list {
+  position: absolute;
+  background: #fff;
+  border: 2px solid hsl(208, 13%, 85%);
+  width: 100%;
+  border-radius: 6px;
+  max-width: 640px;
+  padding: 0.5em;
+  padding-left: 2.4em;
+  box-sizing: border-box;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0);
 }

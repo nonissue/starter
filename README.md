@@ -12,6 +12,11 @@
 - https://github.com/Shopify/polaris-react/blob/master/src/components/TextField/TextField.tsx
 - https://github.com/Shopify/polaris-react/tree/master/src/components/Autocomplete
 - https://polaris.shopify.com/components/forms/autocomplete#navigation
+- https://atlaskit.atlassian.com/packages/core/select kind of
+- https://ant.design/components/auto-complete/
+- https://evergreen.segment.com/components/autocomplete
+- https://github.com/moroshko/react-autosuggest
+- https://alligator.io/react/react-autocomplete/
 
 ## Sections
 

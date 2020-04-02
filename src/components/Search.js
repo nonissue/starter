@@ -3,8 +3,18 @@ import PropTypes from "prop-types";
 import styles from "./Search.module.css";
 import { SearchMajorMonotone } from "@shopify/polaris-icons";
 
+/*
+Will have to implement and customize: 
+* input
+* popover
+* search ahead functionality
+* key press listener
+* event listener (click outside or focus out) 
+
+*/
+
 /**
- * Custom select component
+ * Custom search field component
  * Copied/implemented from scratch based on: https://polaris.shopify.com/components/forms/select#navigation
  * Notes: labelinline not implemented ATM
  * Err, how do we actually handle the change?
@@ -17,28 +27,32 @@ import { SearchMajorMonotone } from "@shopify/polaris-icons";
  */
 
 // eslint-disable-next-line no-unused-vars
-const Search = ({ placeholder, label }) => {
-  const [query, setQuery] = useState();
+const Search = ({ placeholder, label, data }) => {
+  // const [query, setQuery] = useState();
+  const [userInput, setUserInput] = useState("");
+
+  const handleChange = e => {
+    setUserInput(e.currentTarget.value);
+  };
 
   return (
-    <div className={styles.wrapper}>
-      {/* <span className={styles["label-icon"]}>
-        <SearchMajorMonotone viewBox="0 0 20 20" />
-      </span> */}
-      <input
-        type="text"
-        className={styles.input}
-        placeholder={placeholder}
-        // onBlur={handleChange}
-        // onChange={handleChange}
-      ></input>
-      <span className={styles["label-icon"]}>
-        <SearchMajorMonotone viewBox="-1 -1 23 23" />
-      </span>
-      {/* <div className={styles.content}>Test</div> */}
-      <div className={styles.backdrop}></div>
-      {/* <div className={styles.content}></div> */}
-    </div>
+    <>
+      <div className={styles.wrapper}>
+        <input
+          type="text"
+          className={styles.input}
+          placeholder={placeholder}
+          onChange={handleChange}
+          // onBlur={handleChange}
+          // onChange={handleChange}
+        ></input>
+        <span className={styles["label-icon"]}>
+          <SearchMajorMonotone viewBox="-1 -1 23 23" />
+        </span>
+        <div className={styles.backdrop}></div>
+      </div>
+      {userInput && <div className={styles["results-list"]}>{userInput}</div>}
+    </>
   );
 };
 
