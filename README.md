@@ -6,6 +6,12 @@
 - Weather
 - Modify
 
+## Inspiration:
+
+- https://github.com/Shopify/polaris-react/blob/master/src/components/TextField/TextField.tsx
+- https://github.com/Shopify/polaris-react/tree/master/src/components/Autocomplete
+- https://polaris.shopify.com/components/forms/autocomplete#navigation
+
 ## Sections
 
 ### whats.one
