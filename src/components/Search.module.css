@@ -8,10 +8,8 @@
   color: #230051;
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica,
     sans-serif;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03),
-    0 1.8px 2.3px rgba(0, 0, 0, 0.029), 0 3.4px 4.4px rgba(0, 0, 0, 0.024),
-    0 6px 5.8px rgba(0, 0, 0, 0.02);
-  border-radius: 6px;
+  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
 }
 .wrapper input {
   /* prevent ios input zoom */
@@ -22,12 +20,18 @@
   top: 0;
   left: 0;
   box-shadow: none;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0);
   opacity: 1;
   border: 0;
   z-index: 30;
   padding: 0.6em;
   box-sizing: border-box;
   padding-left: 2.2em;
+  border-radius: 6px;
+  transition-property: box-shadow;
+  transition-duration: 300ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
 }
 .wrapper input:focus ~ .backdrop {
   box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent;
@@ -38,9 +42,8 @@
   outline: none;
   /* box-shadow: 0 0 0px 0.75px #5c6ac4, 0 0 0 0 transparent; */
   border-color: #5c6ac4;
-  /* border-radius: 5px; */
-  /* box-shadow: none; */
   opacity: 1;
+  /* box-shadow: none; */
 }
 .content {
   display: flex;
@@ -48,7 +51,6 @@
   align-items: center;
   height: 100%;
   padding: 0;
-  /* padding: 0.4em 0.6em; */
   z-index: 5;
   position: relative;
 }
@@ -57,32 +59,32 @@
 }
 .label {
   margin-right: 0.3em;
-  color: #637381;
+  /* color: #637381; */
 }
 .label-icon {
-  width: 0.9rem;
-  height: 0.9rem;
+  width: 1rem;
+  height: 1rem;
   opacity: 1;
   max-width: 100%;
   max-height: 100%;
   display: block;
   z-index: 50;
   position: absolute;
-  top: 0.65em;
+  top: 0.6em;
   left: 0.8em;
 }
 .label-icon svg,
 .label-icon path {
-  transition-property: fill, fill-opacity, stroke, stroke-opacity;
-  transition-duration: 100ms;
+  transition-property: all;
+  transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
-  stroke-width: 0.5px;
-  stroke: #637381;
-  stroke-opacity: 0.5;
-  fill-opacity: 0.5;
-  fill: #637381;
-  position: relative;
-  /* display: block; */
+  /* stroke-width: 0px; */
+  /* stroke: #637381; */
+  stroke: hsl(208, 13%, 65%);
+  /* opacity: 0.6; */
+  fill: hsl(208, 13%, 65%);
+  /* position: relative; */
+  display: block;
   width: 100%;
   max-width: 100%;
   max-height: 100%;
@@ -90,13 +92,16 @@
 .wrapper input:focus + .label-icon svg,
 .wrapper input:focus + .label-icon path {
   fill: #00044c;
+  stroke: #00044c;
   fill-opacity: 1;
-  stroke: #00004c;
+  opacity: 1;
+  /* stroke: #00044c; */
   stroke-opacity: 1;
 }
 .backdrop {
   position: absolute;
   background-color: #c4cdd5;
+  /* background: transparent; */
   opacity: 1;
   border: 2.5px solid transparent;
   border-radius: 5px;
