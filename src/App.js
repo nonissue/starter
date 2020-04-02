@@ -10,9 +10,10 @@ function App() {
       <header>
         <h1>Startpage</h1>
       </header>
-      <div>
+      <div className={styles.search}>
         <Search label="Test" placeholder="Search" />
       </div>
+      <div className={styles.content}>{/* <h2>Lists</h2> */}</div>
     </div>
   );
 }

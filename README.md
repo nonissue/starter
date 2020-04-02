@@ -5,6 +5,7 @@
 - Omnibox Search
 - Weather
 - Modify
+- Integrate health badges / status checks for whats.one / plex
 
 ## Inspiration:
 

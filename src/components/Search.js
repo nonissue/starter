@@ -19,22 +19,12 @@ import { SearchMajorMonotone } from "@shopify/polaris-icons";
 // eslint-disable-next-line no-unused-vars
 const Search = ({ placeholder, label }) => {
   const [query, setQuery] = useState();
-  // const handleChange = e => {
-  //   let newSelection = options.find(
-  //     option => e.currentTarget.value === option.value
-  //   );
-  //   if (newSelection === undefined) {
-  //     newSelection = options[0].label;
-  //   }
-  //   setSelected(newSelection);
-  //   onChangeSelect(newSelection.value);
-  // };
 
   return (
     <div className={styles.wrapper}>
-      <span className={styles["label-icon"]}>
+      {/* <span className={styles["label-icon"]}>
         <SearchMajorMonotone viewBox="0 0 20 20" />
-      </span>
+      </span> */}
       <input
         type="text"
         className={styles.input}
@@ -42,9 +32,9 @@ const Search = ({ placeholder, label }) => {
         // onBlur={handleChange}
         // onChange={handleChange}
       ></input>
-
-      <div className={styles.content}></div>
-      {/* <div className={styles.backdrop} /> */}
+      {/* <div className={styles.content}>Test</div> */}
+      <div className={styles.backdrop}></div>
+      {/* <div className={styles.content}></div> */}
     </div>
   );
 };
