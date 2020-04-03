@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
-import styles from "./Search.module.css";
 import { SearchMajorMonotone } from "@shopify/polaris-icons";
+import styles from "./Search.module.css";
+const testData = require("../data.json");
 
 /*
 Will have to implement and customize: 
@@ -10,6 +11,8 @@ Will have to implement and customize:
 * search ahead functionality
 * key press listener
 * event listener (click outside or focus out) 
+
+Gets rendered twice?
 
 */
 
@@ -29,50 +32,56 @@ Will have to implement and customize:
 // eslint-disable-next-line no-unused-vars
 const Search = ({ placeholder, label, data }) => {
   // const [query, setQuery] = useState();
-  const [userInput, setUserInput] = useState("");
+  const [userInput, setUserInput] = useState({ value: "" });
 
+  console.log(typeof testData);
+  console.log("Loading");
   const handleChange = e => {
-    setUserInput(e.currentTarget.value);
+    console.log("Handlechange fired");
+    setUserInput({ value: e.currentTarget.value });
+  };
+
+  const clearSearch = e => {
+    console.log("clearSearch fired");
+    setUserInput({ value: "" });
   };
 
   return (
     <>
+      <button onClick={clearSearch}>Clear</button>
       <div className={styles.wrapper}>
         <input
           type="text"
           className={styles.input}
           placeholder={placeholder}
+          value={userInput.value}
           onChange={handleChange}
-          // onBlur={handleChange}
-          // onChange={handleChange}
         ></input>
         <span className={styles["label-icon"]}>
           <SearchMajorMonotone viewBox="-1 -1 23 23" />
         </span>
         <div className={styles.backdrop}></div>
       </div>
-      {userInput && <div className={styles["results-list"]}>{userInput}</div>}
+      {userInput.value && (
+        <div className={styles["results-list"]}>
+          {testData.map(d => {
+            if (d.name === userInput.value) {
+              return `${d["name"]} ${d["url"]}`;
+            }
+            return "";
+          })}
+        </div>
+      )}
     </>
   );
 };
 
 Search.defaultProps = {
-  labelinline: true,
-  onChangeSearch: () => {},
-  Icon: undefined
+  placeholder: "Enter text"
 };
 
 Search.propTypes = {
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string,
-      label: PropTypes.string
-    })
-  ).isRequired,
-  label: PropTypes.string.isRequired,
-  labelinline: PropTypes.bool,
-  onChangeSelect: PropTypes.func,
-  Icon: PropTypes.element
+  placeholder: PropTypes.string
 };
 
 export default Search;
