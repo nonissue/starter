@@ -1,13 +1,13 @@
 [
   { "name": "Ombi", "url": "https://ombi.whats.one" },
-  { "name": "Sonarr", "url": "https://ombi.whats.one" },
-  { "name": "SonarrX", "url": "https://ombi.whats.one" },
-  { "name": "Radarr", "url": "https://ombi.whats.one" },
-  { "name": "RadarrX", "url": "https://ombi.whats.one" },
-  { "name": "Deluge", "url": "https://ombi.whats.one" },
-  { "name": "Deluge2", "url": "https://ombi.whats.one" },
-  { "name": "Netdata", "url": "https://ombi.whats.one" },
-  { "name": "Status", "url": "https://ombi.whats.one" },
-  { "name": "Nixstats", "url": "https://ombi.whats.one" },
-  { "name": "Plex", "url": "https://ombi.whats.one" }
+  { "name": "Sonarr", "url": "https://sonarr.whats.one" },
+  { "name": "SonarrX", "url": "https://sonarrx.whats.one" },
+  { "name": "Radarr", "url": "https://radarr.whats.one" },
+  { "name": "RadarrX", "url": "https://radarrx.whats.one" },
+  { "name": "Deluge", "url": "https://deluge.whats.one" },
+  { "name": "Deluge2", "url": "https://deluge2.whats.one" },
+  { "name": "Netdata", "url": "https://netdata.whats.one" },
+  { "name": "Status", "url": "https://status.whats.one" },
+  { "name": "Nixstats", "url": "https://nixstats.whats.one" },
+  { "name": "Plex", "url": "https://plex.whats.one" }
 ]

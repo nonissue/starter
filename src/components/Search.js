@@ -33,23 +33,39 @@ Gets rendered twice?
 const Search = ({ placeholder, label, data }) => {
   // const [query, setQuery] = useState();
   const [userInput, setUserInput] = useState({ value: "" });
+  const [results, setResults] = useState([]);
 
-  console.log(typeof testData);
-  console.log("Loading");
   const handleChange = e => {
-    console.log("Handlechange fired");
     setUserInput({ value: e.currentTarget.value });
+
+    const searchString = e.currentTarget.value.toLowerCase();
+
+    let tempResults = testData.filter(d => {
+      if (
+        (d.name.toLowerCase().includes(searchString) ||
+          d.url.includes(searchString)) &&
+        e.currentTarget.value.length > 1
+      ) {
+        return d;
+      }
+      return undefined;
+    });
+
+    console.log(tempResults);
+
+    setResults(tempResults);
   };
 
   const clearSearch = e => {
     console.log("clearSearch fired");
     setUserInput({ value: "" });
+    setResults([]);
   };
 
   return (
     <>
-      <button onClick={clearSearch}>Clear</button>
       <div className={styles.wrapper}>
+        {userInput.value !== "" && <button onClick={clearSearch}>X</button>}
         <input
           type="text"
           className={styles.input}
@@ -62,14 +78,20 @@ const Search = ({ placeholder, label, data }) => {
         </span>
         <div className={styles.backdrop}></div>
       </div>
-      {userInput.value && (
-        <div className={styles["results-list"]}>
-          {testData.map(d => {
-            if (d.name === userInput.value) {
-              return `${d["name"]} ${d["url"]}`;
-            }
-            return "";
-          })}
+      {results.length !== 0 && (
+        <div className={`${styles["results-list"]} ${styles.entering}`}>
+          <ul>
+            {results.map(d => {
+              return (
+                <li key={d.name}>
+                  <div className={styles["results-item"]}>
+                    <div className={styles["item-name"]}>{d["name"]}</div>
+                    <div className={styles["item-url"]}>{d["url"]}</div>
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
         </div>
       )}
     </>
