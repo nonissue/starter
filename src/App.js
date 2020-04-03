@@ -2,7 +2,9 @@ import React from "react";
 import "./App.css";
 import styles from "./App.module.css";
 import Search from "./components/Search";
-const listData = require("./data.json");
+const data = require("./data.json");
+const servicesData = data[0].data;
+const resourcesData = data[1].data;
 
 function App() {
   return (
@@ -14,28 +16,49 @@ function App() {
         <Search label="Test" placeholder="Search" />
       </div>
       <div className={styles.content}>
-        <h3>Lists</h3>
         <div className={styles.lists}>
-          <ul>
-            {listData.map(item => (
-              <li>{item.name}</li>
-            ))}
-          </ul>
-          <ul>
-            {listData.map(item => (
-              <li>{item.name}</li>
-            ))}
-          </ul>
-          <ul>
-            {listData.map(item => (
-              <li>{item.name}</li>
-            ))}
-          </ul>
-          <ul>
-            {listData.map(item => (
-              <li>{item.name}</li>
-            ))}
-          </ul>
+          {/* Break below into new component */}
+          <div>
+            <h3>Services</h3>
+            <ul>
+              {servicesData.map(item => (
+                <li>
+                  <a href={item.url}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          {/* New component ends here */}
+          <div>
+            <h3>Resources</h3>
+            <ul>
+              {resourcesData.map(item => (
+                <li>
+                  <a href={item.url}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>News</h3>
+            <ul>
+              {servicesData.map(item => (
+                <li>
+                  <a href={item.url}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div>
+            <h3>Sites</h3>
+            <ul>
+              {servicesData.map(item => (
+                <li>
+                  <a href={item.url}>{item.name}</a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
     </div>

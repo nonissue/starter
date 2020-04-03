@@ -41,7 +41,7 @@ const Search = ({ placeholder, label, data }) => {
 
     const searchString = e.currentTarget.value.toLowerCase();
 
-    let tempResults = testData.filter(d => {
+    let tempResults = testData[0].data.filter(d => {
       if (
         (d.name.toLowerCase().includes(searchString) ||
           d.url.includes(searchString)) &&
