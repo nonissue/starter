@@ -36,25 +36,35 @@ const Search = ({ placeholder, label, data }) => {
   const [userInput, setUserInput] = useState({ value: "" });
   const [results, setResults] = useState([]);
 
+  // our json data is an array of objects with a nested array
+  // so we flatten them for search. if we care about category,
+  // we shouldnt do this
+  const flattened = testData.map(category => category.data).flat();
+
   const handleChange = e => {
     setUserInput({ value: e.currentTarget.value });
 
     const searchString = e.currentTarget.value.toLowerCase();
 
-    let tempResults = testData[0].data.filter(d => {
-      if (
-        (d.name.toLowerCase().includes(searchString) ||
-          d.url.includes(searchString)) &&
-        e.currentTarget.value.length > 1
-      ) {
-        return d;
-      }
-      return undefined;
+    let matches = [];
+    testData.forEach(function(category) {
+      matches = matches.concat(
+        category.data.filter(item => {
+          if (
+            (item.name.toLowerCase().includes(searchString) ||
+              item.url.includes(searchString)) &&
+            e.currentTarget.value.length > 1
+          ) {
+            return item;
+          }
+          return undefined;
+        })
+      );
     });
 
-    console.log(tempResults);
+    // console.log(newResults);
 
-    setResults(tempResults);
+    setResults(matches);
   };
 
   const clearSearch = e => {
