@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import PropTypes from "prop-types";
 import { SearchMajorMonotone } from "@shopify/polaris-icons";
 import styles from "./Search.module.css";
+import OptionsList from "./OptionsList";
 const testData = require("../data.json");
 
 /*
@@ -78,7 +79,9 @@ const Search = ({ placeholder, label, data }) => {
         </span>
         <div className={styles.backdrop}></div>
       </div>
-      {results.length !== 0 && (
+      {/* Break this out to a new component, optionslist? */}
+      <OptionsList data={results} />
+      {/* {results.length !== 0 && (
         <div className={`${styles["results-list"]} ${styles.entering}`}>
           <ul>
             {results.map(d => {
@@ -93,7 +96,7 @@ const Search = ({ placeholder, label, data }) => {
             })}
           </ul>
         </div>
-      )}
+      )} */}
     </>
   );
 };

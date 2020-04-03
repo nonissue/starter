@@ -1,5 +1,23 @@
 .wrapper {
   max-width: 640px;
   margin: 0 auto;
+  margin-top: 6em;
   padding: 0 1em;
+}
+.wrapper h1 {
+  color: #50b83c;
+  text-align: center;
+}
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* background: #ccc; */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  opacity: 0.95;
+}
+.lists {
+  display: flex;
+  flex-direction: row;
 }
