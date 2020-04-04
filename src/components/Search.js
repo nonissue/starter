@@ -47,24 +47,26 @@ const Search = ({ placeholder, label, data }) => {
     const searchString = e.currentTarget.value.toLowerCase();
 
     let matches = [];
-    testData.forEach(function(category) {
-      matches = matches.concat(
-        category.data.filter(item => {
-          if (
-            (item.name.toLowerCase().includes(searchString) ||
-              item.url.includes(searchString)) &&
-            e.currentTarget.value.length > 1
-          ) {
-            return item;
-          }
-          return undefined;
-        })
-      );
+    testData.forEach(category => {
+      // matches = matches.concat(
+      category.data.forEach(item => {
+        if (
+          (item.name.toLowerCase().includes(searchString) ||
+            item.url.includes(searchString)) &&
+          e.currentTarget.value.length > 1
+        ) {
+          matches.push({ ...item, category: category.category });
+          // console.log({ ...item, category: category.category });
+          // return [{ ...item, category: category.category }];
+        }
+        // return undefined;
+      });
+      // );
     });
 
-    // console.log(newResults);
+    console.log(matches);
 
-    setResults(matches);
+    setResults(matches.slice(0, 5));
   };
 
   const clearSearch = e => {
@@ -91,22 +93,6 @@ const Search = ({ placeholder, label, data }) => {
       </div>
       {/* Break this out to a new component, optionslist? */}
       <OptionsList data={results} />
-      {/* {results.length !== 0 && (
-        <div className={`${styles["results-list"]} ${styles.entering}`}>
-          <ul>
-            {results.map(d => {
-              return (
-                <li key={d.name}>
-                  <div className={styles["results-item"]}>
-                    <div className={styles["item-name"]}>{d["name"]}</div>
-                    <div className={styles["item-url"]}>{d["url"]}</div>
-                  </div>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )} */}
     </>
   );
 };

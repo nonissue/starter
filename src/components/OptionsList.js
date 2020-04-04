@@ -63,13 +63,16 @@ const OptionsList = ({ data }) => {
     <>
       {/* Break this out to a new component, optionslist? */}
       {data.length !== 0 && (
-        <div className={`${styles["results-list"]} ${styles.entering}`}>
+        <div className={`${styles["results-list"]}`}>
           <ul>
             {data.map(d => {
               return (
                 <li key={d.name}>
                   <div className={styles["results-item"]}>
                     <div className={styles["item-name"]}>{d["name"]}</div>
+                    <div className={styles["item-category"]}>
+                      {d["category"]}
+                    </div>
                     <div className={styles["item-url"]}>{d["url"]}</div>
                   </div>
                 </li>
