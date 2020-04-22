@@ -19,7 +19,8 @@
     "category": "Resources",
     "data": [
       { "name": "Shopify Polaris", "url": "https://polaris.shopify.com" },
-      { "name": "Blueprint", "url": "https://blueprintjs.com" }
+      { "name": "Blueprint", "url": "https://blueprintjs.com" },
+      { "name": "CSS Tricks", "url": "https://csstricks.com" }
     ]
   }
 ]

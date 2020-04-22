@@ -31,7 +31,13 @@ Gets rendered twice?
  */
 
 // eslint-disable-next-line no-unused-vars
-const Search = ({ placeholder, label, data }) => {
+const Search = ({
+  placeholder,
+  updateFunction,
+  currentStatus,
+  label,
+  data
+}) => {
   // const [query, setQuery] = useState();
   const [userInput, setUserInput] = useState({ value: "" });
   const [results, setResults] = useState([]);
@@ -43,6 +49,7 @@ const Search = ({ placeholder, label, data }) => {
 
   const handleChange = e => {
     setUserInput({ value: e.currentTarget.value });
+    updateFunction({ value: e.currentTarget.value });
 
     const searchString = e.currentTarget.value.toLowerCase();
 
@@ -56,10 +63,7 @@ const Search = ({ placeholder, label, data }) => {
           e.currentTarget.value.length > 1
         ) {
           matches.push({ ...item, category: category.category });
-          // console.log({ ...item, category: category.category });
-          // return [{ ...item, category: category.category }];
         }
-        // return undefined;
       });
       // );
     });
@@ -67,12 +71,14 @@ const Search = ({ placeholder, label, data }) => {
     console.log(matches);
 
     setResults(matches.slice(0, 5));
+    updateFunction({ ...currentStatus, results: [...matches.slice(0, 5)] });
   };
 
   const clearSearch = e => {
     console.log("clearSearch fired");
     setUserInput({ value: "" });
     setResults([]);
+    updateFunction({ value: "", results: [] });
   };
 
   return (
@@ -83,8 +89,8 @@ const Search = ({ placeholder, label, data }) => {
       <div
         className={`${styles.wrapper}  ${
           results.length !== 0 && userInput.value.length !== 0
-            ? styles.nbb
-            : styles.bb
+            ? styles["no-bottom-border"]
+            : styles["bottom-border"]
         }`}
       >
         {userInput.value !== "" && <button onClick={clearSearch}>X</button>}
@@ -93,19 +99,23 @@ const Search = ({ placeholder, label, data }) => {
           className={`
            ${results.length !== 0 &&
              userInput.value.length !== 0 &&
-             styles.nbb}`}
+             styles["no-bottom-border"]} `}
           placeholder={placeholder}
           value={userInput.value}
           onChange={handleChange}
         ></input>
-        <span className={styles["label-icon"]}>
+        <span
+          className={`${styles["label-icon"]} ${userInput.value.length !== 0 &&
+            styles["pseudo-focus-icon"]}`}
+        >
           <SearchMajorMonotone viewBox="-1 -1 23 23" />
         </span>
         <div
           className={`${styles.backdrop} 
            ${results.length !== 0 &&
              userInput.value.length !== 0 &&
-             styles.nbb}`}
+             styles["no-bottom-border"]} ${userInput.value.length !== 0 &&
+            styles["pseudo-focus"]}`}
         ></div>
       </div>
       {/* Break this out to a new component, optionslist? */}

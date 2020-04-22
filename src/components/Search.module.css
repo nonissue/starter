@@ -24,21 +24,20 @@
 .wrapper input {
   /* prevent ios input zoom */
   font-size: 18px;
-  box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent;
+  box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 30%), 0 0 0 0 transparent;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
   opacity: 1;
   border: 0;
+
   z-index: 30;
   padding: 0.6em;
+
   box-sizing: border-box;
   padding-left: 2em;
-  /* border-radius: 6px; */
   transition-property: box-shadow;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -46,7 +45,8 @@
 
 .wrapper input:focus ~ .backdrop {
   /* box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent; */
-  background: #bbe5b3;
+  background: #5c6ac4;
+  /* background: hsla(232, 47%, 56%, 70%); */
   /* border-bottom-width: 0; */
 }
 
@@ -56,10 +56,13 @@
   /* border-bottom-width: 0; */
   /* border-bottom: 0; */
 }
+
 .wrapper input:focus {
   outline: none;
   border-color: #5c6ac4;
   opacity: 1;
+  /* border-bottom: 1px solid red; */
+  /* padding-top: 0.8em; */
 }
 .content {
   display: flex;
@@ -70,9 +73,11 @@
   z-index: 5;
   position: relative;
 }
+
 .selected {
   flex: 1 1;
 }
+
 .label-icon {
   width: 1rem;
   height: 1rem;
@@ -82,9 +87,10 @@
   display: block;
   z-index: 50;
   position: absolute;
-  top: 0.75em;
+  top: 0.7em;
   left: 0.8em;
 }
+
 .label-icon svg,
 .label-icon path {
   transition-property: all;
@@ -97,10 +103,11 @@
   max-width: 100%;
   max-height: 100%;
 }
+
 .wrapper input:focus + .label-icon svg,
 .wrapper input:focus + .label-icon path {
-  fill: #00044c;
-  stroke: #00044c;
+  fill: #202e78;
+  stroke: #202e78;
   fill-opacity: 1;
   opacity: 1;
   stroke-opacity: 1;
@@ -108,9 +115,9 @@
 
 .backdrop {
   position: absolute;
-  background-color: #c4cdd5;
+  background-color: #b3bcf5;
   opacity: 1;
-  border: 2px solid transparent;
+  border: 2.5px solid transparent;
   transition-property: box-shadow, background-color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -130,43 +137,48 @@
   right: 0;
   display: block;
   background: linear-gradient(to bottom, white, #f9fafb);
-  /* border-radius: 4px; */
 }
 
-.nbb {
+.no-bottom-border {
   border-bottom: 0px solid transparent;
-  padding-bottom: 12px !important;
+  /* border-bottom: 2px solid red; */
+  padding-bottom: 13px !important;
 }
-.nbb input {
+.no-bottom-border input {
   border: 0px;
   border-color: red !important;
 }
-.bb {
+.nbb input:focus ~ .backdrop {
+}
+
+.bottom-border {
   border-bottom: 2px solid transparent;
 }
 /* need to fade in */
 .results-list {
   box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent;
-  box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent;
+  box-shadow: 0 0 0px 3px hsla(110, 49%, 80%, 50%, 30%), 0 0 0 0 transparent;
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0);
   position: absolute;
-  border: 2px solid hsl(208, 13%, 85%);
+  border: 2.5px solid hsl(208, 13%, 85%);
   border-top: 2px;
-  border-left-color: #bbe5b3;
-  border-right-color: #bbe5b3;
-  border-bottom-color: #bbe5b3;
-  background: hsla(110, 49%, 100%, 90%);
+  border-left-color: #5c6ac4;
+  border-right-color: #5c6ac4;
+  border-bottom-color: #5c6ac4;
+  background: hsla(110, 49%, 100%, 70%);
   /* width: calc(100% + 10px); */
   width: 100%;
   margin: 0 auto;
   max-width: 640px;
-  /* margin-top: 30px; */
+  z-index: 50;
+
   will-change: opacity;
   transition: opacity;
-  /* transform: perspective(500px) translateZ(100px); */
-  /* transform: perspective(1000px) translateZ(20px); */
   transition-duration: 500ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
   box-sizing: border-box;
+
   /* box-shadow: 0px 4px 3px hsla(0, 0%, 100%, 0%), 0 0.7px 1px rgba(0, 0, 0, 0.01),
     0 1.8px 2.3px rgba(0, 0, 0, 0.01), 0 3.4px 4.4px rgba(0, 0, 0, 0.05),
     0 6px 5.8px rgba(0, 0, 0, 0); */
@@ -189,6 +201,7 @@
   border-bottom: 1px solid #eee;
   /* border-radius: 10px; */
 }
+
 .results-list ul li:hover {
   cursor: pointer;
   /* color: #ff0000; */
@@ -233,4 +246,22 @@
   text-align: right;
   font-family: monospace;
   /* align-self: center; */
+}
+
+.fiftypercent {
+  opacity: 0.5;
+}
+
+/* prevents input losing focus styling when focus is lost BUT
+results are still being shown */
+.pseudo-focus {
+  background: #5c6ac4 !important;
+}
+
+.pseudo-focus-icon {
+  fill: #202e78 !important;
+  stroke: #202e78 !important;
+  fill-opacity: 1;
+  opacity: 1;
+  stroke-opacity: 1;
 }
