@@ -6,6 +6,7 @@ const data = require("./data.json");
 
 const servicesData = data[0].data;
 const resourcesData = data[1].data;
+const newsData = data[2].data;
 
 function App() {
   const [searchStatus, setSearchStatus] = useState({
@@ -44,7 +45,7 @@ function App() {
           </div>
           {/* New component ends here */}
           <div>
-            <h3>Resources</h3>
+            <h3>Design Resources</h3>
             <ul>
               {resourcesData.map(item => (
                 <li>
@@ -53,7 +54,7 @@ function App() {
               ))}
             </ul>
           </div>
-          <div>
+          {/* <div>
             <h3>News</h3>
             <ul>
               {servicesData.slice(0, 6).map(item => (
@@ -62,17 +63,17 @@ function App() {
                 </li>
               ))}
             </ul>
-          </div>
-          {/* <div>
-            <h3>Sites</h3>
+          </div> */}
+          <div>
+            <h3>News</h3>
             <ul>
-              {servicesData.map(item => (
+              {newsData.map(item => (
                 <li>
                   <a href={item.url}>{item.name}</a>
                 </li>
               ))}
             </ul>
-          </div> */}
+          </div>
         </div>
       </div>
     </div>

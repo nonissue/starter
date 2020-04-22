@@ -22,5 +22,13 @@
       { "name": "Blueprint", "url": "https://blueprintjs.com" },
       { "name": "CSS Tricks", "url": "https://csstricks.com" }
     ]
+  },
+  {
+    "category": "News",
+    "data": [
+      { "name": "HackerNews", "url": "https://news.ycombinator.com" },
+      { "name": "DesignerNews", "url": "https://designernews.co" },
+      { "name": "Lobsters", "url": "https://lobste.rs" }
+    ]
   }
 ]
