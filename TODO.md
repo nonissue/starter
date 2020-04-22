@@ -13,4 +13,4 @@
 - [ ] Pressing return routes to currently active result
 - [ ] Navigate results with keyboard (arrows)
 - [ ] Status Check Badges
-- [ ] Add search google functionality? ()
+- [ ] Add search google functionality? (If no result selected and return is pressed, send query to google)

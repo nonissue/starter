@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import styles from "./App.module.css";
 import Search from "./components/Search";
@@ -17,6 +17,12 @@ function App() {
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
+        <img
+          alt="startpage logo"
+          src={process.env.PUBLIC_URL + "/logo192.png"}
+          width="50px"
+          height="50px"
+        />
         <h1>Starter</h1>
       </header>
       <div className={styles.search}>
