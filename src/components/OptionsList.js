@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 // import { SearchMajorMonotone } from "@shopify/polaris-icons";
-import styles from "./Search.module.css";
+import styles from "./OptionsList.module.css";
 // const testData = require("../data.json");
 
 /*
@@ -66,14 +66,19 @@ const OptionsList = ({ data }) => {
       {data.length !== 0 && (
         <div className={`${styles["results-list"]}`}>
           <ul>
-            {data.map(d => {
+            {data.map((d, i) => {
               return (
                 <li key={d.name}>
                   <div className={styles["results-item"]}>
-                    <div className={styles["item-name"]}>{d["name"]}</div>
-                    <div className={styles["item-category"]}>
-                      {d["category"]}
+                    <div className={styles["item-name"]}>
+                      <div className={styles["shortcut-label"]}>
+                        &#8984;{i + 1}
+                      </div>
+                      {d["name"]}
                     </div>
+                    {/* <div className={styles["item-category"]}>
+                      {d["category"]}
+                    </div> */}
                     <div className={styles["item-url"]}>{d["url"]}</div>
                   </div>
                 </li>
