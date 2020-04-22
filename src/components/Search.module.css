@@ -9,9 +9,8 @@
   color: #230051;
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica,
     sans-serif;
-  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
 }
+
 .wrapper button {
   z-index: 50;
   position: absolute;
@@ -44,26 +43,18 @@
 }
 
 .wrapper input:focus ~ .backdrop {
-  /* box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent; */
   background: #5c6ac4;
-  /* background: hsla(232, 47%, 56%, 70%); */
-  /* border-bottom-width: 0; */
 }
 
 .wrapper input:focus ~ .backdrop:after {
-  /* box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 50%), 0 0 0 0 transparent; */
-  /* background: #fff; */
-  /* border-bottom-width: 0; */
-  /* border-bottom: 0; */
 }
 
 .wrapper input:focus {
   outline: none;
   border-color: #5c6ac4;
   opacity: 1;
-  /* border-bottom: 1px solid red; */
-  /* padding-top: 0.8em; */
 }
+
 .content {
   display: flex;
   font-size: 16px;
@@ -141,14 +132,14 @@
 
 .no-bottom-border {
   border-bottom: 0px solid transparent;
-  /* border-bottom: 2px solid red; */
   padding-bottom: 13px !important;
 }
 .no-bottom-border input {
   border: 0px;
-  border-color: red !important;
+  /* border-color: red !important; */
 }
-.nbb input:focus ~ .backdrop {
+
+.no-border-bottom input:focus ~ .backdrop {
 }
 
 .bottom-border {

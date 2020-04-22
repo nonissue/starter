@@ -1,5 +1,14 @@
 # Startpage
 
+## Overview
+
+A simple startpage for Safari, made using CRA + Netlify.
+
+- [Demo](https://starterr.netlify.com)
+
+View TODO.md to get a better idea of what this will look like when finished.
+Note: Data is currently just stored in a json file, but in future will be better structured and editable.
+
 ## Features
 
 - Omnibox Search
@@ -54,5 +63,3 @@
 
 - codepen.io
 - codesandbox
-
-### Blogs

@@ -38,7 +38,7 @@ const Search = ({
   label,
   data
 }) => {
-  // const [query, setQuery] = useState();
+  // Can probably remove these as state is passed from parent
   const [userInput, setUserInput] = useState({ value: "" });
   const [results, setResults] = useState([]);
 
@@ -55,7 +55,6 @@ const Search = ({
 
     let matches = [];
     testData.forEach(category => {
-      // matches = matches.concat(
       category.data.forEach(item => {
         if (
           (item.name.toLowerCase().includes(searchString) ||
@@ -118,7 +117,6 @@ const Search = ({
             styles["pseudo-focus"]}`}
         ></div>
       </div>
-      {/* Break this out to a new component, optionslist? */}
       <OptionsList data={results} />
     </>
   );
