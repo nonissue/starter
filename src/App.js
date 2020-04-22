@@ -3,6 +3,7 @@ import "./App.css";
 import styles from "./App.module.css";
 import Search from "./components/Search";
 const data = require("./data.json");
+
 const servicesData = data[0].data;
 const resourcesData = data[1].data;
 

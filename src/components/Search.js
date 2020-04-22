@@ -1,4 +1,4 @@
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { SearchMajorMonotone } from "@shopify/polaris-icons";
 import styles from "./Search.module.css";
@@ -39,7 +39,7 @@ const Search = ({ placeholder, label, data }) => {
   // our json data is an array of objects with a nested array
   // so we flatten them for search. if we care about category,
   // we shouldnt do this
-  const flattened = testData.map(category => category.data).flat();
+  // const flattened = testData.map(category => category.data).flat();
 
   const handleChange = e => {
     setUserInput({ value: e.currentTarget.value });
