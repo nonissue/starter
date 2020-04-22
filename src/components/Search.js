@@ -77,11 +77,23 @@ const Search = ({ placeholder, label, data }) => {
 
   return (
     <>
-      <div className={styles.wrapper}>
+      {/* <h3>
+        Results length {results.length} / User Input {userInput.value.length}
+      </h3> */}
+      <div
+        className={`${styles.wrapper}  ${
+          results.length !== 0 && userInput.value.length !== 0
+            ? styles.nbb
+            : styles.bb
+        }`}
+      >
         {userInput.value !== "" && <button onClick={clearSearch}>X</button>}
         <input
           type="text"
-          className={styles.input}
+          className={`
+           ${results.length !== 0 &&
+             userInput.value.length !== 0 &&
+             styles.nbb}`}
           placeholder={placeholder}
           value={userInput.value}
           onChange={handleChange}
@@ -89,7 +101,12 @@ const Search = ({ placeholder, label, data }) => {
         <span className={styles["label-icon"]}>
           <SearchMajorMonotone viewBox="-1 -1 23 23" />
         </span>
-        <div className={styles.backdrop}></div>
+        <div
+          className={`${styles.backdrop} 
+           ${results.length !== 0 &&
+             userInput.value.length !== 0 &&
+             styles.nbb}`}
+        ></div>
       </div>
       {/* Break this out to a new component, optionslist? */}
       <OptionsList data={results} />
