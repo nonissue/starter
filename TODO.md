@@ -4,6 +4,7 @@
 - [ ] Clear Search Field Icon
 - [ ] Pseudo Focus Search Icon (Prevent colour revert)
 - [ ] Greedy grid (masonry style)
+- [ ] Fix search icon transition when typing starts (it reverts to unfocused state)
 - [ ] Animate lists fading out, results fading in, results dismissal
 
 ## Functonal tweaks:

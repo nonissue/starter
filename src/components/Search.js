@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import { SearchMajorMonotone } from "@shopify/polaris-icons";
+import {
+  SearchMajorMonotone,
+  CircleCancelMajorMonotone
+} from "@shopify/polaris-icons";
 import styles from "./Search.module.css";
 import OptionsList from "./OptionsList";
 const testData = require("../data.json");
@@ -92,7 +95,6 @@ const Search = ({
             : styles["bottom-border"]
         }`}
       >
-        {userInput.value !== "" && <button onClick={clearSearch}>X</button>}
         <input
           type="text"
           className={`
@@ -103,12 +105,24 @@ const Search = ({
           value={userInput.value}
           onChange={handleChange}
         ></input>
+
         <span
           className={`${styles["label-icon"]} ${userInput.value.length !== 0 &&
             styles["pseudo-focus-icon"]}`}
         >
           <SearchMajorMonotone viewBox="-1 -1 23 23" />
         </span>
+        {/* If this component is shown, it fucks up focus highlight of search icon */}
+        {userInput.value !== "" && true && (
+          <button onClick={clearSearch}>
+            <span
+              className={`${styles["icon-wrapper"]} ${userInput.value.length !==
+                0 && styles["pseudos-focus-icon"]}`}
+            >
+              <CircleCancelMajorMonotone viewBox="-1 -1 23 23" />
+            </span>
+          </button>
+        )}
         <div
           className={`${styles.backdrop} 
            ${results.length !== 0 &&
