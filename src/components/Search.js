@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import {
   SearchMajorMonotone,
@@ -17,6 +17,9 @@ Will have to implement and customize:
 * event listener (click outside or focus out) 
 
 Gets rendered twice?
+
+TOOD: updateFunction and setUserInput and setResults overlap in terms of responsbilities
+Migrate to using updateFunction only as state is passed from parent
 
 */
 
@@ -50,6 +53,23 @@ const Search = ({
   // we shouldnt do this
   // const flattened = testData.map(category => category.data).flat();
 
+  // dismiss modal with escape
+  useEffect(() => {
+    const clearSearch = event => {
+      if (userInput.value !== "" && event.key === "Escape") {
+        updateFunction({ value: "", results: [] });
+        setUserInput({ value: "" });
+        setResults([]);
+      }
+    };
+
+    window.addEventListener("keydown", clearSearch);
+
+    return () => {
+      window.removeEventListener("keydown", clearSearch);
+    };
+  }, [currentStatus, updateFunction, userInput]);
+
   const handleChange = e => {
     setUserInput({ value: e.currentTarget.value });
     updateFunction({ value: e.currentTarget.value });
@@ -73,7 +93,10 @@ const Search = ({
     console.log(matches);
 
     setResults(matches.slice(0, 5));
-    updateFunction({ ...currentStatus, results: [...matches.slice(0, 5)] });
+    updateFunction({
+      ...currentStatus,
+      results: [...matches.slice(0, 5)]
+    });
   };
 
   const clearSearch = e => {
