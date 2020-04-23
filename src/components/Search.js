@@ -4,9 +4,13 @@ import {
   SearchMajorMonotone,
   CircleCancelMajorMonotone
 } from "@shopify/polaris-icons";
+import { createBrowserHistory } from "history";
 import styles from "./Search.module.css";
 import OptionsList from "./OptionsList";
+import useKeyPress from "./utils/useKeyPress";
 const testData = require("../data.json");
+
+const history = createBrowserHistory();
 
 /*
 Will have to implement and customize: 
@@ -47,6 +51,43 @@ const Search = ({
   // Can probably remove these as state is passed from parent
   const [userInput, setUserInput] = useState({ value: "" });
   const [results, setResults] = useState([]);
+  const [selectedResult, setSelectedResult] = useState(null);
+
+  const downPress = useKeyPress("ArrowDown");
+  const upPress = useKeyPress("ArrowUp");
+  const enterPress = useKeyPress("Enter");
+
+  useEffect(() => {
+    if (results.length && downPress && selectedResult + 1 <= results.length) {
+      // console.log(results[selectedResult].url);
+      setSelectedResult(prevState =>
+        prevState <= results.length - 1 ? prevState + 1 : prevState
+      );
+    }
+  }, [downPress, results.length]);
+  useEffect(() => {
+    if (results.length && upPress) {
+      setSelectedResult(prevState =>
+        prevState > 0 ? prevState - 1 : prevState
+      );
+    }
+  }, [upPress, results.length]);
+  useEffect(() => {
+    if (selectedResult !== null && enterPress) {
+      // console.log(selectedResult);
+      window.location.assign(`${results[selectedResult - 1].url}`);
+      // history.replace(`${results[selectedResult - 1].url}`);
+      // history.go();
+    } else if (
+      selectedResult === null &&
+      userInput.value !== "" &&
+      enterPress
+    ) {
+      window.location.assign(
+        `https://www.google.com/search?q=${userInput.value}`
+      );
+    }
+  }, [selectedResult, enterPress, results, userInput.value]);
 
   // our json data is an array of objects with a nested array
   // so we flatten them for search. if we care about category,
@@ -63,7 +104,23 @@ const Search = ({
       }
     };
 
+    // const updateSelected = event => {
+    //   if (event.key === "ArrowUp") {
+    //     // up
+    //     setSelectedResult(selectedResult - 1);
+    //     console.log("Arrow up, selected: " + selectedResult);
+    //   }
+    //   if (
+    //     event.key === "ArrowDown"
+    //     // (results.length < selectedResult + 1 && false)
+    //   ) {
+    //     setSelectedResult(selectedResult + 1);
+    //     console.log("Arrow down, selected: " + selectedResult);
+    //   }
+    // };
+
     window.addEventListener("keydown", clearSearch);
+    // window.addEventListener("keydown", updateSelected);
 
     return () => {
       window.removeEventListener("keydown", clearSearch);
@@ -135,6 +192,11 @@ const Search = ({
         >
           <SearchMajorMonotone viewBox="-1 -1 23 23" />
         </span>
+        {results.length === 0 && userInput.value !== "" && (
+          <span className={styles["search-help-text"]}>
+            Press enter to search google
+          </span>
+        )}
         {/* If this component is shown, it fucks up focus highlight of search icon */}
         {userInput.value !== "" && true && (
           <button onClick={clearSearch}>
@@ -154,7 +216,7 @@ const Search = ({
             styles["pseudo-focus"]}`}
         ></div>
       </div>
-      <OptionsList data={results} />
+      <OptionsList data={results} selected={selectedResult} />
     </>
   );
 };

@@ -171,6 +171,19 @@
   background: linear-gradient(to bottom, white, #f9fafb);
 }
 
+.search-help-text {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  font-size: 0.6em;
+  color: hsl(0, 0%, 60%);
+  text-align: right;
+  margin-right: 4em;
+  top: 1.3em;
+  z-index: 100;
+  /* background: red; */
+}
+
 .no-bottom-border {
   border-bottom: 0px solid transparent;
   padding-bottom: 16px !important;

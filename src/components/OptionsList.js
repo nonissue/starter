@@ -28,7 +28,7 @@ Gets rendered twice?
  */
 
 // eslint-disable-next-line no-unused-vars
-const OptionsList = ({ data }) => {
+const OptionsList = ({ data, selected }) => {
   // const [query, setQuery] = useState();
   // const [results, setResults] = useState([]);
 
@@ -62,14 +62,19 @@ const OptionsList = ({ data }) => {
   return (
     <>
       {/* Break this out to a new component, optionslist? */}
-
+      {/* {console.log("Selected: " + selected)} */}
       {data.length !== 0 && (
         <div className={`${styles["results-list"]}`}>
           <ul>
             {data.map((d, i) => {
               return (
                 <li key={d.name}>
-                  <div className={styles["results-item"]}>
+                  {/* {console.log(i)} */}
+
+                  <div
+                    className={`${styles["results-item"]} ${i + 1 ===
+                      selected && styles.selected}`}
+                  >
                     <div className={styles["item-name"]}>
                       <div className={styles["shortcut-label"]}>
                         &#8984;{i + 1}

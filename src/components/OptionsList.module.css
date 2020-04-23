@@ -74,6 +74,10 @@
   /* background: green; */
 }
 
+.selected {
+  background: #f4f5fa;
+}
+
 .item-name {
   font-weight: 600;
   display: flex;
