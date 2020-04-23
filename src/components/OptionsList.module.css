@@ -70,10 +70,6 @@
   height: 1em;
 }
 
-.results-item:hover {
-  /* background: green; */
-}
-
 .selected {
   background: #f4f5fa;
 }

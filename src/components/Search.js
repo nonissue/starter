@@ -4,13 +4,10 @@ import {
   SearchMajorMonotone,
   CircleCancelMajorMonotone
 } from "@shopify/polaris-icons";
-import { createBrowserHistory } from "history";
 import styles from "./Search.module.css";
 import OptionsList from "./OptionsList";
 import useKeyPress from "./utils/useKeyPress";
 const testData = require("../data.json");
-
-const history = createBrowserHistory();
 
 /*
 Will have to implement and customize: 
@@ -64,6 +61,7 @@ const Search = ({
         prevState <= results.length - 1 ? prevState + 1 : prevState
       );
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [downPress, results.length]);
   useEffect(() => {
     if (results.length && upPress) {

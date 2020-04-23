@@ -31,9 +31,6 @@
   text-align: right;
 }
 
-.icon-wrapper button {
-}
-
 .icon-wrapper svg,
 .icon-wrapper path {
   transition-property: all;
@@ -42,15 +39,8 @@
   stroke: hsla(208, 13%, 75%, 0%);
   stroke: transparent;
   fill: hsla(208, 13%, 75%, 100%);
-  /* display: block; */
-  /* width: 100%; */
   width: 1em;
   height: 1em;
-  /* max-width: 100%; */
-  /* max-height: 100%; */
-  /* position: absolute; */
-  /* top: 0.7em; */
-  /* right: 0.8em; */
 }
 
 .wrapper button:hover svg,
@@ -84,9 +74,6 @@
 
 .wrapper input:focus ~ .backdrop {
   background: #5c6ac4;
-}
-
-.wrapper input:focus ~ .backdrop:after {
 }
 
 .wrapper input:focus {
@@ -191,9 +178,6 @@
 .no-bottom-border input {
   border: 0px;
   /* border-color: red !important; */
-}
-
-.no-border-bottom input:focus ~ .backdrop {
 }
 
 .bottom-border {
