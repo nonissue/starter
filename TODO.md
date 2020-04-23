@@ -9,9 +9,10 @@
 
 ## Functonal tweaks:
 
-- [ ] Escape to clear search input
-- [ ] Add shortcut labels for quickly selecting result
+- [x] Escape to clear search input
+- [x] Add shortcut labels for quickly selecting result
 - [ ] Pressing return routes to currently active result
-- [ ] Navigate results with keyboard (arrows)
+- [x] Navigate results with keyboard (arrows)
+- [ ] add support command key shortcuts
 - [ ] Status Check Badges
-- [ ] Add search google functionality? (If no result selected and return is pressed, send query to google)
+- [x] Add search google functionality? (If no result selected and return is pressed, send query to google)

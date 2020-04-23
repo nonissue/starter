@@ -58,8 +58,8 @@ const Search = ({
   const enterPress = useKeyPress("Enter");
 
   useEffect(() => {
+    // adding selectedResult to deps breaks this....
     if (results.length && downPress && selectedResult + 1 <= results.length) {
-      // console.log(results[selectedResult].url);
       setSelectedResult(prevState =>
         prevState <= results.length - 1 ? prevState + 1 : prevState
       );
@@ -74,10 +74,7 @@ const Search = ({
   }, [upPress, results.length]);
   useEffect(() => {
     if (selectedResult !== null && enterPress) {
-      // console.log(selectedResult);
       window.location.assign(`${results[selectedResult - 1].url}`);
-      // history.replace(`${results[selectedResult - 1].url}`);
-      // history.go();
     } else if (
       selectedResult === null &&
       userInput.value !== "" &&
@@ -104,23 +101,7 @@ const Search = ({
       }
     };
 
-    // const updateSelected = event => {
-    //   if (event.key === "ArrowUp") {
-    //     // up
-    //     setSelectedResult(selectedResult - 1);
-    //     console.log("Arrow up, selected: " + selectedResult);
-    //   }
-    //   if (
-    //     event.key === "ArrowDown"
-    //     // (results.length < selectedResult + 1 && false)
-    //   ) {
-    //     setSelectedResult(selectedResult + 1);
-    //     console.log("Arrow down, selected: " + selectedResult);
-    //   }
-    // };
-
     window.addEventListener("keydown", clearSearch);
-    // window.addEventListener("keydown", updateSelected);
 
     return () => {
       window.removeEventListener("keydown", clearSearch);

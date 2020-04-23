@@ -30,5 +30,13 @@
       { "name": "DesignerNews", "url": "https://designernews.co" },
       { "name": "Lobsters", "url": "https://lobste.rs" }
     ]
+  },
+  {
+    "category": "Releases",
+    "data": [
+      { "name": "IPT", "url": "https://ipttorrents.com" },
+      { "name": "PTP", "url": "https://passthepopcorn.com" },
+      { "name": "BTN", "url": "https://broadcasthe.net" }
+    ]
   }
 ]

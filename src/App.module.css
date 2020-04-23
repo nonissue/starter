@@ -2,7 +2,7 @@
   max-width: 640px;
   margin: 0 auto;
   margin-top: 6em;
-  padding: 0 1em;
+  /* padding: 0 1em; */
   margin-bottom: 4em;
 }
 
@@ -61,19 +61,18 @@
   border: 1px solid hsl(0, 0%, 90%);
   padding: 1em;
   padding-top: 0;
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0);
+  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
   border-radius: 0px;
   margin-top: 1em;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  /* display: flex; */
+  /* flex-direction: row; */
+  /* flex-wrap: wrap; */
 }
 
 .lists h3 {
   margin: 0.9em 0;
   color: #202e78;
-  /* font-family: monospace; */
 }
 
 .lists ul {
@@ -87,9 +86,9 @@
   font-weight: 500;
 }
 
-.lists > div {
+/* .lists > div {
   width: 33%;
-}
+} */
 
 .lists a,
 .list a:active,
@@ -104,4 +103,22 @@
 
 .dim-lists {
   opacity: 0.3;
+}
+
+.my-masonry-grid {
+  display: -webkit-box; /* Not needed if autoprefixing */
+  display: -ms-flexbox; /* Not needed if autoprefixing */
+  display: flex;
+  margin-left: -30px; /* gutter size offset */
+  width: auto;
+}
+.my-masonry-grid_column {
+  padding-left: 30px; /* gutter size */
+  background-clip: padding-box;
+}
+
+/* Style your items */
+.my-masonry-grid_column > div {
+  /* change div to reference your elements you put in <Masonry> */
+  margin-bottom: 30px;
 }
