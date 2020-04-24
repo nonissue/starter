@@ -69,11 +69,10 @@ const OptionsList = ({ data, selected }) => {
             {data.map((d, i) => {
               return (
                 <li key={d.name}>
-                  {/* {console.log(i)} */}
-
                   <div
-                    className={`${styles["results-item"]} ${i + 1 ===
-                      selected && styles.selected}`}
+                    className={`${styles["results-item"]} ${
+                      i + 1 === selected && styles.selected
+                    }`}
                   >
                     <div className={styles["item-name"]}>
                       {d["name"]}
@@ -98,11 +97,11 @@ const OptionsList = ({ data, selected }) => {
 };
 
 OptionsList.defaultProps = {
-  data: "Enter text"
+  data: "Enter text",
 };
 
 OptionsList.propTypes = {
-  data: PropTypes.array
+  data: PropTypes.array,
 };
 
 export default OptionsList;

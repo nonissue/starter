@@ -14,13 +14,13 @@ const myBreakpointsAndCols = {
   default: 3,
   1100: 3,
   700: 2,
-  500: 1
+  500: 1,
 };
 
 function App() {
   const [searchStatus, setSearchStatus] = useState({
     value: "",
-    results: []
+    results: [],
   });
 
   return (
@@ -28,13 +28,12 @@ function App() {
       <header className={styles.header}>
         <img
           alt="startpage logo"
-          src={process.env.PUBLIC_URL + "/logo192.png"}
-          width="50px"
-          height="50px"
+          src={process.env.PUBLIC_URL + "/StarterLogoTransparent.png"}
         />
-        <b>⤳</b>
+
+        {/* <b>⤳</b> */}
         {/* <br /> */}
-        <h1>Starter</h1>
+        {/* <h1>Starter</h1> */}
         <div className={styles.search}>
           <Search
             label="Test"
@@ -47,8 +46,9 @@ function App() {
 
       <div className={styles.content}>
         <div
-          className={`${styles.lists} ${searchStatus.results.length > 0 &&
-            styles["dim-lists"]}`}
+          className={`${styles.lists} ${
+            searchStatus.results.length > 0 && styles["dim-lists"]
+          }`}
         >
           <Masonry
             breakpointCols={myBreakpointsAndCols}
@@ -59,7 +59,7 @@ function App() {
             <div className={styles.list}>
               <h3>Releases</h3>
               <ul>
-                {releasesData.map(item => (
+                {releasesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -69,7 +69,7 @@ function App() {
             <div className={styles.list}>
               <h3>Services</h3>
               <ul>
-                {servicesData.map(item => (
+                {servicesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -80,7 +80,7 @@ function App() {
             <div className={styles.list}>
               <h3>Design Resources</h3>
               <ul>
-                {resourcesData.map(item => (
+                {resourcesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -91,7 +91,7 @@ function App() {
             <div className={styles.list}>
               <h3>News</h3>
               <ul>
-                {newsData.map(item => (
+                {newsData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -101,7 +101,7 @@ function App() {
             <div className={styles.list}>
               <h3>Releases</h3>
               <ul>
-                {releasesData.map(item => (
+                {releasesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -111,7 +111,7 @@ function App() {
             <div className={styles.list}>
               <h3>News</h3>
               <ul>
-                {newsData.map(item => (
+                {newsData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -121,7 +121,7 @@ function App() {
             <div className={styles.list}>
               <h3>Services</h3>
               <ul>
-                {servicesData.map(item => (
+                {servicesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>
@@ -132,7 +132,7 @@ function App() {
             <div className={styles.list}>
               <h3>Design Resources</h3>
               <ul>
-                {resourcesData.map(item => (
+                {resourcesData.map((item) => (
                   <li key={item.name}>
                     <a href={item.url}>{item.name}</a>
                   </li>

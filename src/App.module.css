@@ -5,6 +5,18 @@
   /* position: absolute; */
   /* padding: 0 1em; */
   margin-bottom: 4em;
+  position: relative;
+}
+
+@media only screen and (max-width: 48em) {
+  .wrapper {
+    /* border: 2px solid red; */
+    max-width: 85vw;
+  }
+
+  .lists {
+    margin-top: 0;
+  }
 }
 
 .wrapper h1 {
@@ -21,15 +33,32 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   top: 0;
+  width: 100%;
+  padding-top: 1rem;
+  left: 0;
+  padding-bottom: 0rem;
+  padding-top: 1em;
+  /* left: 0; */
   z-index: 1000;
   /* background: #ccc; */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(50px);
   opacity: 0.98;
   text-align: center;
+  border-bottom: 3px solid hsl(0, 0%, 90%);
   margin-bottom: 0rem;
+}
+
+@media only screen and (min-width: 35em) {
+  .header {
+    border-bottom: 0;
+  }
+}
+
+.header:after {
+  padding-bottom: 1em;
+  content: "";
 }
 
 .header > * {
@@ -42,11 +71,18 @@
 }
 
 .header img {
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.1),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0);
-  opacity: 0.3;
-  filter: grayscale(0.5);
-  display: none;
+  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.1),
+    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
+  opacity: 1;
+  /* position: relative; */
+  left: 0;
+  display: block;
+  /* top: 2rem; */
+  z-index: 5000;
+  opacity: 0.8;
+  width: 7rem;
+  /* filter: grayscale(0.5); */
+  /* display: none; */
 }
 
 .header h1 {
@@ -78,13 +114,37 @@
   /* border: 2px solid hsl(0, 0%, 90%); */
   /* padding: 1em; */
   padding-top: 0;
-
   border-radius: 0px;
-  margin-top: 12em;
+  margin-top: 70%;
   /* display: flex; */
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
 }
+
+@media only screen and (min-width: 15em) {
+  .lists {
+    margin-top: 25vh;
+  }
+}
+
+@media only screen and (min-width: 30em) {
+  .lists {
+    margin-top: 20vw;
+    /* background: red; */
+  }
+}
+
+@media only screen and (min-width: 50em) {
+  .lists {
+    margin-top: 16vh;
+  }
+}
+
+/* @media only screen and (max-width: 65em) {
+  .lists {
+    margin-top: 30vh;
+  }
+} */
 
 .lists h3 {
   margin: 0.9em 0;

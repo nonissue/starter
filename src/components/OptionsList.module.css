@@ -35,6 +35,13 @@
   box-sizing: border-box;
 }
 
+@media only screen and (max-width: 48em) {
+  .results-list {
+    /* border: 2px solid red; */
+    max-width: 85vw;
+  }
+}
+
 .results-list ul {
   list-style-type: none;
   padding: 0;

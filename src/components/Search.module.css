@@ -1,11 +1,14 @@
 .wrapper {
   position: relative;
-  top: 1rem;
-  left: 0;
+  display: flex;
+  flex-direction: column;
+
+  /* top: 4em; */
+  /* left: 0; */
   /* top: 10rem; */
   font-size: 20px;
   width: 840px;
-  max-width: 840px;
+
   height: 2.4em;
   /* z-index: 1000; */
   /* border: 2px solid red; */
@@ -20,6 +23,13 @@
     sans-serif;
 }
 
+@media only screen and (max-width: 48em) {
+  .wrapper {
+    /* border: 2px solid red; */
+    max-width: 85vw;
+  }
+}
+
 .wrapper button {
   z-index: 50;
   position: absolute;
@@ -28,28 +38,6 @@
   font-size: 24px;
   border: 0;
   background: transparent;
-}
-
-.icon-wrapper {
-  width: 1em;
-  height: 1em;
-  opacity: 1;
-  display: block;
-  width: 100%;
-  z-index: 50;
-  text-align: right;
-}
-
-.icon-wrapper svg,
-.icon-wrapper path {
-  transition-property: all;
-  transition-duration: 200ms;
-  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
-  stroke: hsla(208, 13%, 75%, 0%);
-  stroke: transparent;
-  fill: hsla(208, 13%, 75%, 100%);
-  width: 1em;
-  height: 1em;
 }
 
 .wrapper button:hover svg,
@@ -103,6 +91,28 @@
 
 .selected {
   flex: 1 1;
+}
+
+.icon-wrapper {
+  width: 1em;
+  height: 1em;
+  opacity: 1;
+  display: block;
+  width: 100%;
+  z-index: 50;
+  text-align: right;
+}
+
+.icon-wrapper svg,
+.icon-wrapper path {
+  transition-property: all;
+  transition-duration: 200ms;
+  transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
+  stroke: hsla(208, 13%, 75%, 0%);
+  stroke: transparent;
+  fill: hsla(208, 13%, 75%, 100%);
+  width: 1em;
+  height: 1em;
 }
 
 .label-icon {
