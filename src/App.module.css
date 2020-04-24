@@ -1,7 +1,8 @@
 .wrapper {
-  max-width: 640px;
+  max-width: 840px;
   margin: 0 auto;
-  margin-top: 6em;
+  margin-top: 2em;
+  /* position: absolute; */
   /* padding: 0 1em; */
   margin-bottom: 4em;
 }
@@ -15,9 +16,9 @@
 }
 
 .header {
-  position: sticky;
+  position: fixed;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
@@ -25,17 +26,18 @@
   z-index: 1000;
   /* background: #ccc; */
   backdrop-filter: blur(15px);
-  -webkit-backdrop-filter: blur(15px);
-  opacity: 0.95;
+  -webkit-backdrop-filter: blur(50px);
+  opacity: 0.98;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 0rem;
 }
 
 .header > * {
   margin: 1em;
   margin-left: 0;
-  margin-bottom: 0.5em;
+  margin-bottom: 0em;
   margin-top: 0.5em;
+  margin-right: 0;
   /* line-height: 1.5em; */
 }
 
@@ -48,23 +50,37 @@
 }
 
 .header h1 {
-  color: #230051;
-  font-weight: 900;
-  letter-spacing: -0.01em;
+  color: hsl(266, 100%, 26%);
+  color: #001429;
+  font-family: monospace;
+  font-weight: 400;
+  border-bottom: 1px solid hsla(266, 100%, 16%, 20%);
+  font-size: 1.2em;
+  letter-spacing: 0.03em;
+  margin-bottom: 0rem;
+}
+
+.header b {
+  font-weight: 400;
+  font-size: 3em;
+  /* margin-bottom: -0.25em; */
+  line-height: 2.2rem;
+  color: hsla(204, 100%, 27%, 50%);
 }
 
 .content {
   padding: 0;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .lists {
-  border: 1px solid hsl(0, 0%, 90%);
-  padding: 1em;
+  /* border: 2px solid hsl(0, 0%, 90%); */
+  /* padding: 1em; */
   padding-top: 0;
-  /* box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.02), 0 1.8px 2.3px rgba(0, 0, 0, 0.01),
-    0 3.4px 4.4px rgba(0, 0, 0, 0.05), 0 6px 5.8px rgba(0, 0, 0, 0); */
+
   border-radius: 0px;
-  margin-top: 1em;
+  margin-top: 12em;
   /* display: flex; */
   /* flex-direction: row; */
   /* flex-wrap: wrap; */
@@ -101,24 +117,42 @@
   color: #202e78;
 }
 
+.list {
+  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.05),
+    0 3.4px 4.4px rgba(0, 0, 0, 0), 0 6px 5.8px rgba(0, 0, 0, 0);
+  border: 2px solid hsla(231, 39%, 70%, 30%);
+  /* border-radius: 0.5em; */
+  padding: 0.7em 0.9em;
+  background: linear-gradient(to bottom, white, #f9fafb);
+  /* padding-top: 0.5em; */
+}
+
+.list h3 {
+  margin: 0 0 0.6em;
+  font-weight: 700;
+  padding-bottom: 0.2em;
+  border-bottom: 1px dotted hsla(231, 39%, 70%, 80%);
+}
+
 .dim-lists {
   opacity: 0.3;
 }
 
 .my-masonry-grid {
+  --grid-gutter-width: 20px;
   display: -webkit-box; /* Not needed if autoprefixing */
   display: -ms-flexbox; /* Not needed if autoprefixing */
   display: flex;
-  margin-left: -30px; /* gutter size offset */
+  margin-left: calc(var(--grid-gutter-width) * -1); /* gutter size offset */
   width: auto;
 }
 .my-masonry-grid_column {
-  padding-left: 30px; /* gutter size */
+  padding-left: var(--grid-gutter-width); /* gutter size */
   background-clip: padding-box;
 }
 
 /* Style your items */
 .my-masonry-grid_column > div {
   /* change div to reference your elements you put in <Masonry> */
-  margin-bottom: 30px;
+  margin-bottom: var(--grid-gutter-width);
 }

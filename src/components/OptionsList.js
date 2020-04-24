@@ -76,10 +76,11 @@ const OptionsList = ({ data, selected }) => {
                       selected && styles.selected}`}
                   >
                     <div className={styles["item-name"]}>
-                      <div className={styles["shortcut-label"]}>
-                        &#8984;{i + 1}
-                      </div>
                       {d["name"]}
+                      &nbsp;&nbsp;
+                      <div className={styles["shortcut-label"]}>
+                        &#8984; + {i + 1}
+                      </div>
                     </div>
                     {/* <div className={styles["item-category"]}>
                       {d["category"]}

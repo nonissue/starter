@@ -1,9 +1,6 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import {
-  SearchMajorMonotone,
-  CircleCancelMajorMonotone
-} from "@shopify/polaris-icons";
+import { SearchMajorMonotone, CancelSmallMinor } from "@shopify/polaris-icons";
 import styles from "./Search.module.css";
 import OptionsList from "./OptionsList";
 import useKeyPress from "./utils/useKeyPress";
@@ -183,7 +180,7 @@ const Search = ({
               className={`${styles["icon-wrapper"]} ${userInput.value.length !==
                 0 && styles["pseudos-focus-icon"]}`}
             >
-              <CircleCancelMajorMonotone viewBox="-1 -1 23 23" />
+              <CancelSmallMinor viewBox="-1 -1 23 23" />
             </span>
           </button>
         )}

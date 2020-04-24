@@ -1,11 +1,20 @@
 .wrapper {
   position: relative;
-  font-size: 24px;
-  width: 100%;
-  max-width: 640px;
+  top: 1rem;
+  left: 0;
+  /* top: 10rem; */
+  font-size: 20px;
+  width: 840px;
+  max-width: 840px;
   height: 2.4em;
+  /* z-index: 1000; */
+  /* border: 2px solid red; */
+  /* left: 50%; */
+
   box-sizing: border-box;
   margin: 0em auto;
+  /* margin-left: calc(840px / 2 * -1); */
+  /* margin-bottom: 2rem; */
   color: #230051;
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir, Helvetica,
     sans-serif;
@@ -14,8 +23,8 @@
 .wrapper button {
   z-index: 50;
   position: absolute;
-  top: 0.5em;
-  right: 0.4em;
+  top: 0.4em;
+  right: 0.2em;
   font-size: 24px;
   border: 0;
   background: transparent;
@@ -52,7 +61,7 @@
 
 .wrapper input {
   /* prevent ios input zoom */
-  font-size: 24px;
+  font-size: 18px;
   box-shadow: 0 0 0px 1px hsla(110, 49%, 80%, 30%), 0 0 0 0 transparent;
   width: 100%;
   height: 100%;
@@ -66,7 +75,7 @@
   padding: 0.6em;
 
   box-sizing: border-box;
-  padding-left: 2.4em;
+  padding-left: 2.6em;
   transition-property: box-shadow;
   transition-duration: 300ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -97,15 +106,15 @@
 }
 
 .label-icon {
-  width: 1em;
-  height: 1em;
+  width: 0.9em;
+  height: 0.9em;
   opacity: 1;
   max-width: 100%;
   max-height: 100%;
   display: block;
   z-index: 50;
   position: absolute;
-  top: 0.7em;
+  top: 0.75em;
   left: 0.8em;
 }
 
@@ -134,9 +143,9 @@
 
 .backdrop {
   position: absolute;
-  background-color: #b3bcf5;
+  background-color: hsla(231, 39%, 70%, 50%);
   opacity: 1;
-  border: 3px solid transparent;
+  border: 2px solid transparent;
   transition-property: box-shadow, background-color;
   transition-duration: 200ms;
   transition-timing-function: cubic-bezier(0.64, 0, 0.35, 1);
@@ -145,6 +154,8 @@
   bottom: 0;
   left: 0;
   right: 0;
+
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 .backdrop::after {
@@ -173,7 +184,7 @@
 
 .no-bottom-border {
   border-bottom: 0px solid transparent;
-  padding-bottom: 16px !important;
+  padding-bottom: 13px !important;
 }
 .no-bottom-border input {
   border: 0px;
@@ -181,7 +192,7 @@
 }
 
 .bottom-border {
-  border-bottom: 3px solid transparent;
+  border-bottom: 2px solid transparent;
 }
 .fiftypercent {
   opacity: 0.5;
