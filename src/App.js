@@ -1,9 +1,9 @@
-import React, { useState } from "react";
-import Masonry from "react-masonry-css";
-import "./App.css";
-import styles from "./App.module.css";
-import Search from "./components/Search";
-const data = require("./data.json");
+import React, { useState } from 'react';
+import Masonry from 'react-masonry-css';
+import './App.css';
+import styles from './App.module.css';
+import Search from './components/Search';
+const data = require('./data.json');
 
 const servicesData = data[0].data;
 const resourcesData = data[1].data;
@@ -19,27 +19,27 @@ const myBreakpointsAndCols = {
 
 function App() {
   const [searchStatus, setSearchStatus] = useState({
-    value: "",
+    value: '',
     results: [],
   });
+
+  console.log('rendered');
 
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
-        <img
-          alt="startpage logo"
-          src={process.env.PUBLIC_URL + "/StarterLogoTransparent.png"}
-        />
-
-        {/* <b>⤳</b> */}
-        {/* <br /> */}
-        {/* <h1>Starter</h1> */}
+        <a href='http://localhost:3000'>
+          <img
+            alt='startpage logo'
+            src={process.env.PUBLIC_URL + '/StarterLogoTransparent.png'}
+          />
+        </a>
         <div className={styles.search}>
           <Search
-            label="Test"
-            placeholder="Search"
-            currentStatus={searchStatus}
-            updateFunction={setSearchStatus}
+            label='Search'
+            placeholder='Search'
+            searchState={searchStatus}
+            setSearchState={setSearchStatus}
           />
         </div>
       </header>
@@ -47,14 +47,13 @@ function App() {
       <div className={styles.content}>
         <div
           className={`${styles.lists} ${
-            searchStatus.results.length > 0 && styles["dim-lists"]
+            searchStatus.results.length > 0 && styles['dim-lists']
           }`}
         >
           <Masonry
             breakpointCols={myBreakpointsAndCols}
-            // breakpointCols={3}
-            className={styles["my-masonry-grid"]}
-            columnClassName={styles["my-masonry-grid_column"]}
+            className={styles['my-masonry-grid']}
+            columnClassName={styles['my-masonry-grid_column']}
           >
             <div className={styles.list}>
               <h3>Releases</h3>
@@ -76,7 +75,7 @@ function App() {
                 ))}
               </ul>
             </div>
-            {/* New component ends here */}
+
             <div className={styles.list}>
               <h3>Design Resources</h3>
               <ul>
@@ -128,7 +127,7 @@ function App() {
                 ))}
               </ul>
             </div>
-            {/* New component ends here */}
+
             <div className={styles.list}>
               <h3>Design Resources</h3>
               <ul>
