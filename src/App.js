@@ -28,13 +28,13 @@ function App() {
   return (
     <div className={styles.wrapper}>
       <header className={styles.header}>
-        <a href='http://localhost:3000'>
+        <a aria-label='logo-link' href='/'>
           <img
-            alt='startpage logo'
+            alt='Starter logo'
             src={process.env.PUBLIC_URL + '/StarterLogoTransparent.png'}
           />
         </a>
-        <div className={styles.search}>
+        <div aria-label='link-search' className={styles.search}>
           <Search
             label='Search'
             placeholder='Search'
@@ -44,7 +44,7 @@ function App() {
         </div>
       </header>
 
-      <div className={styles.content}>
+      <div aria-label='links' data-testid='links' className={styles.content}>
         <div
           className={`${styles.lists} ${
             searchStatus.results.length > 0 && styles['dim-lists']
@@ -75,7 +75,6 @@ function App() {
                 ))}
               </ul>
             </div>
-
             <div className={styles.list}>
               <h3>Design Resources</h3>
               <ul>
