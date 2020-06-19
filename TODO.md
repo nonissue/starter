@@ -1,11 +1,12 @@
 ### Visual tweaks:
 
-- [ ] Change green highlight colour to something else
-- [ ] Clear Search Field Icon
+- [x] Change green highlight colour to something else
+- [x] Clear Search Field Icon
 - [ ] Pseudo Focus Search Icon (Prevent colour revert)
 - [ ] Greedy grid (masonry style)
-- [ ] Fix search icon transition when typing starts (it reverts to unfocused state)
+- [x] Fix search icon transition when typing starts (it reverts to unfocused state) FIXED I THINK
 - [ ] Animate lists fading out, results fading in, results dismissal
+- [ ] Fix fluid layout on low width devices
 
 ## Functonal tweaks:
 
@@ -16,3 +17,7 @@
 - [ ] add support command key shortcuts
 - [ ] Status Check Badges
 - [x] Add search google functionality? (If no result selected and return is pressed, send query to google)
+
+## Issues:
+
+- [!] Compents render twice (UPDATE: This is caused by strict mode and is not a problem)
