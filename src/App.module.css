@@ -58,7 +58,7 @@
 
 .header:after {
   padding-bottom: 1em;
-  content: "";
+  content: '';
 }
 
 .header > * {
@@ -178,13 +178,11 @@
 }
 
 .list {
-  box-shadow: 0 0.7px 1px rgba(0, 0, 0, 0.03), 0 1.8px 2.3px rgba(0, 0, 0, 0.05),
+  box-shadow: 0 0.7px 3px rgba(0, 0, 0, 0.02), 0px 0.8px 5px rgba(0, 0, 0, 0.07),
     0 3.4px 4.4px rgba(0, 0, 0, 0), 0 6px 5.8px rgba(0, 0, 0, 0);
-  border: 2px solid hsla(231, 39%, 70%, 30%);
-  /* border-radius: 0.5em; */
+  border: 1px solid hsla(231, 39%, 70%, 30%);
   padding: 0.7em 0.9em;
   background: linear-gradient(to bottom, white, #f9fafb);
-  /* padding-top: 0.5em; */
 }
 
 .list h3 {
